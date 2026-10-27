@@ -19,7 +19,7 @@ public class WhisperingLantern {
             } else {
                 input.next();
             }
-            if (choic < min || choice > max) {
+            if (choice < min || choice > max) {
                 System.out.println(DIM + "(Please choose a number from" + min + "to" + max + ".)" + RESET);
             }
         }
@@ -42,9 +42,22 @@ public class WhisperingLantern {
         boolean childSceneDone = false;
 
         System.out.println();
+        //Pre Story Printing Needs Here
         input.nextLine(); // Press Enter to Continue
 
-
+        while (oil > 0 && minutesLeft > 0 && distanceToTravel > 0) {
+            int clockMinutes = 15 + (45 - minutesLeft);
+            String clock;
+            if (clockMinutes >= 60) {
+                clock = "3:00 AM";
+            } else {
+                clock = "2" + clockMinutes + " AM";
+            }
+            System.out.println("Clock: " + clock);
+            System.out.println("Lantern oil:" + oil + "%");
+            System.out.println("Minutes left:" + minutesLeft);
+            System.out.println("Steps to Home: " + distanceToTravel);
+        }
     }
 
 }
