@@ -22,12 +22,12 @@ public class WhisperingLantern {
             if (choic < min || choice > max) {
                 System.out.println(DIM + "(Please choose a number from" + min + "to" + max + ".)" + RESET);
             }
-            System.out.println();
-            return choice;
         }
+        System.out.println();
+        return choice;
     }
 
-    public static  void main(string[] args){
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
 
