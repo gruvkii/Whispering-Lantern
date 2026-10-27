@@ -57,6 +57,14 @@ public class WhisperingLantern {
             System.out.println("Lantern oil:" + oil + "%");
             System.out.println("Minutes left:" + minutesLeft);
             System.out.println("Steps to Home: " + distanceToTravel);
+            if (oil <= 25){
+                System.out.println("The Flame shrinks to a treambling baed, Shadows lean Closer." + RESET);
+            }
+            if (minutesLeft <= 10){
+                System.out.println(AMBER+ "High above the fog , the bell tower groans, getting ready." + RESET);
+            }
+
+            System.out.println();
         }
     }
 
