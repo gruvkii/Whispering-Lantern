@@ -74,7 +74,7 @@ public class WhisperingLantern {
             } else {
                 System.out.println(" 3. Talk to Arthur the ghost ");
             }
-            int choic = askChoice(input, 1, 3);
+            int choice = askChoice(input, 1, 3);
 
             if (choice == 1) {
                 distanceToTravel = distanceToTravel - 1;
@@ -89,6 +89,36 @@ public class WhisperingLantern {
                     System.out.println("Something small crawl away from the light. you decided not to look!");
                 }
                 System.out.println(DIM + "One step Closer. The flame drank 18% of the oil." + RESET);
+            } else if (choice == 2 ){
+                oil = oil + 12 ;
+                if (oil > 100 ){
+                    oil = 100;
+                }
+                minutesLeft = minutesLeft - 5;
+                System.out.println("You Kneel on the cold ground and steady you shaking Hands!");
+                System.out.println("The flame steadies and turns a warmer gold (+12% oil ) ");
+                System.out.println(DIM + "But the minutes keep going, and they never look Back."+ RESET);
+            }
+            else {
+                minutesLeft = minutesLeft - 5;
+                if (ghostTalks == 0 ){
+                    ghostTalks = ghostTalks+1;
+                    ghostTrust = ghostTrust +1;
+                    System.out.println("The shape drifts closer: an old man in a threadbare coat approaches,");
+                    System.out.println("So pale you can see the gravestone through him");
+                    System.out.println();
+                    System.out.println("Arthur the Ghost: A living soul? After all these years? Forgive me, ");
+                    System.out.println("I've forgotten how to be starting" + RESET);
+                    System.out.println();
+                    System.out.println("His Eyes fell into your locket you were wearing!");
+                    System.out.println();
+                    System.out.println("Arthur the Ghost: That's hers, That's my Eleanor's. I gave it to her");
+                    System.out.println("The day we  married. I died first, you see , and she was buried");
+                    System.out.println("In circles for 90 years trying to find her :sob: ");
+                    System.out.println("He doesn't ask you for anything. That's somehow the hardest part.");
+                    System.out.println("(Arthur trusts you a little more now)");
+
+                }
             }
         }
     }
