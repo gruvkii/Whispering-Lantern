@@ -19,11 +19,32 @@ public class WhisperingLantern {
             } else {
                 input.next();
             }
-            if (choic < min || choice > max){
-                System.out.println(DIM + "(Please choose a number from" + min + "to" + max + ".)"+ RESET);
+            if (choic < min || choice > max) {
+                System.out.println(DIM + "(Please choose a number from" + min + "to" + max + ".)" + RESET);
             }
             System.out.println();
             return choice;
         }
     }
+
+    public static  void main(string[] args){
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+
+        int oil = 100;
+        int minutesLeft = 45;
+        int distanceToTravel = 6;
+
+        int ghostTrust = 0;
+        int ghostTalks = 0;
+        boolean helpedChild = false;
+        boolean tookKey = false;
+        boolean childSceneDone = false;
+
+        System.out.println();
+        input.nextLine(); // Press Enter to Continue
+
+
+    }
+
 }
