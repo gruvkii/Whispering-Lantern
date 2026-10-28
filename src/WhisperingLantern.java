@@ -120,7 +120,7 @@ public class WhisperingLantern {
                     ghostTalks = ghostTalks + 1;
                     int roll = random.nextInt(3);
                     if (roll == 0) {
-                        distanceToTravel = distanceToTravel -1 ;
+                        distanceToTravel = distanceToTravel - 1;
                         int tip = random.nextInt(2);
                         if (tip == 0) {
                             System.out.println("Arthur the Ghost: The cold spots, dear. Follow the cold spots !");
@@ -130,10 +130,43 @@ public class WhisperingLantern {
                             System.out.println("Just past it . I .... I always lose my nerve at that gap" + RESET);
                         }
                         System.out.println("He Drifts ahead of you , and the fog parts away!");
-                    }
-                    else if (roll == 1 ){
+                    } else if (roll == 1) {
+                        System.out.println("Arthur the ghost : She hummed when she cooked.");
+                        System.out.println("always happy, I'd give anything to hear it badly again :sob: ..........");
+                        System.out.println();
+                        System.out.println("His voice thins out. He looks very small");
+                        System.out.println();
+                        System.out.println("1. Stay with him and let him remember (costs 5 more minutes) ");
+                        System.out.println("2. Gently say you're running out of time ");
+                        int reaction = askChoice(input, 1, 2);
+                        if (reaction == 1) {
+                            minutesLeft = minutesLeft - 5;
+                            ghostTrust = ghostTrust + 1;
+                            System.out.println("You sit beside him until the memory settles. he nods once/");
+                            System.out.println("Arthur the Ghost trusts you more. the clock ticks another 5 minutes");
+                        } else {
+                            System.out.println("Arthur the Ghost: of Course, Please forgive and Old MAN ");
+                            System.out.println("He smiles, but something in it dims");
+                        }
+                    } else {
+                        oil = oil -15;
+                        System.out.println("Arthur the Ghost: Is that FIRE? oh, dear, I could never ....");
+                        System.out.println("You lose 15% of your oil");
                     }
                 }
+            }
+            System.out.println();
+            If (distanceToTravel <= 4 && distanceToTravel >0 && !childSceneDone && oil > 0 && minutesLeft > 0)
+            {
+                childSceneDone = true;
+                System.out.println("A tiny light flickers between two headstones. A little girl in a");
+                System.out.println("nightgown is holding a candle stub that has almost burned out.");
+                System.out.println();
+                System.out.println("Wren the Child: Please... it keeps going out. I can't find my mama in dark");
+                System.out.println();
+                System.out.println("1. Tilt your lantern and share some of your oil (-10% oil)");
+                System.out.println("2. Tell her you're sorry, but you can't spare any, and walk on");
+                int wrenChoice = askChoice(input, 1, 2);
             }
         }
     }
