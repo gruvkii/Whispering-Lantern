@@ -2,13 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class WhisperingLantern {
-    // COLORS FOR DIFFERENT Environment
-    static final String RESET = "\u001B[0m";
-    static final String TEAL = "\u001B[38;5;37m";
-    static final String AMBER = "\u001B[38;5;214m";
-    static final String RED = "\u001B[38;5;196m";
-    static final String GREEN = "\u001B[38;5;78m";
-    static final String DIM = "\u001B[2m";
 
     static int askChoice(Scanner input, int min, int max) {
         int choice = -1;
@@ -20,7 +13,7 @@ public class WhisperingLantern {
                 input.next();
             }
             if (choice < min || choice > max) {
-                System.out.println(DIM + "(Please choose a number from" + min + "to" + max + ".)" + RESET);
+                System.out.println("(Please choose a number from" + min + "to" + max + ".)");
             }
         }
         System.out.println();
@@ -58,10 +51,10 @@ public class WhisperingLantern {
             System.out.println("Minutes left:" + minutesLeft);
             System.out.println("Steps to Home: " + distanceToTravel);
             if (oil <= 25) {
-                System.out.println("The Flame shrinks to a treambling baed, Shadows lean Closer." + RESET);
+                System.out.println("The Flame shrinks to a treambling baed, Shadows lean Closer.");
             }
             if (minutesLeft <= 10) {
-                System.out.println(AMBER + "High above the fog , the bell tower groans, getting ready." + RESET);
+                System.out.println("High above the fog , the bell tower groans, getting ready.");
             }
 
             System.out.println();
@@ -88,7 +81,7 @@ public class WhisperingLantern {
                 } else {
                     System.out.println("Something small crawl away from the light. you decided not to look!");
                 }
-                System.out.println(DIM + "One step Closer. The flame drank 18% of the oil." + RESET);
+                System.out.println("One step Closer. The flame drank 18% of the oil.");
             } else if (choice == 2) {
                 oil = oil + 12;
                 if (oil > 100) {
@@ -97,7 +90,7 @@ public class WhisperingLantern {
                 minutesLeft = minutesLeft - 5;
                 System.out.println("You Kneel on the cold ground and steady you shaking Hands!");
                 System.out.println("The flame steadies and turns a warmer gold (+12% oil ) ");
-                System.out.println(DIM + "But the minutes keep going, and they never look Back." + RESET);
+                System.out.println("But the minutes keep going, and they never look Back.");
             } else {
                 minutesLeft = minutesLeft - 5;
                 if (ghostTalks == 0) {
@@ -107,7 +100,7 @@ public class WhisperingLantern {
                     System.out.println("So pale you can see the gravestone through him");
                     System.out.println();
                     System.out.println("Arthur the Ghost: A living soul? After all these years? Forgive me, ");
-                    System.out.println("I've forgotten how to be starting" + RESET);
+                    System.out.println("I've forgotten how to be starting");
                     System.out.println();
                     System.out.println("His Eyes fell into your locket you were wearing!");
                     System.out.println();
@@ -124,10 +117,10 @@ public class WhisperingLantern {
                         int tip = random.nextInt(2);
                         if (tip == 0) {
                             System.out.println("Arthur the Ghost: The cold spots, dear. Follow the cold spots !");
-                            System.out.println("I've worn this whole place looking for her" + RESET);
+                            System.out.println("I've worn this whole place looking for her");
                         } else {
                             System.out.println("Arthur the Ghost: There is a gap behind the tree. Her house is ");
-                            System.out.println("Just past it . I .... I always lose my nerve at that gap" + RESET);
+                            System.out.println("Just past it . I .... I always lose my nerve at that gap");
                         }
                         System.out.println("He Drifts ahead of you , and the fog parts away!");
                     } else if (roll == 1) {
@@ -156,7 +149,7 @@ public class WhisperingLantern {
                 }
             }
             System.out.println();
-            If (distanceToTravel <= 4 && distanceToTravel >0 && !childSceneDone && oil > 0 && minutesLeft > 0)
+            if (distanceToTravel <= 4 && distanceToTravel >0 && !childSceneDone && oil > 0 && minutesLeft > 0)
             {
                 childSceneDone = true;
                 System.out.println("A tiny light flickers between two headstones. A little girl in a");
@@ -167,8 +160,26 @@ public class WhisperingLantern {
                 System.out.println("1. Tilt your lantern and share some of your oil (-10% oil)");
                 System.out.println("2. Tell her you're sorry, but you can't spare any, and walk on");
                 int wrenChoice = askChoice(input, 1, 2);
+
+                if (wrenChoice == 1){
+                    helpedChild = true;
+                    if (oil > 10 ){
+                        oil = oil - 10;
+                        System.out.println("You tip a few precious drops onto her wick. her candles blooms in the dark");
+                    }else{
+                        System.out.println("You own flame is so low that she shakes her head, closes your");
+                        System.out.println("fingers back around the lantern and smiles anyway.");
+
+                    }
+                    System.out.println("Wren the Child: I won't forget. If you light dies, I'll come to find you.");
+                    System.out.println("(Something small and warm has been promised to you.)");
+                }
+                else  {
+                    System.out.println("You walk on Belind you, her little light goes out");
+                    System.out.println("You tell yourself you had no choice. Mostly it works");
+                }
+                System.out.println();
             }
         }
     }
-
 }
