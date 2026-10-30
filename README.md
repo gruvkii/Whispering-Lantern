@@ -70,13 +70,7 @@ These are secrets Check out the Game to Know !
 ### Requirements
 - [JDK 25 or newer](https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) (optional, but recommended)
-### Option 1: Run in IntelliJ IDEA
-1. Open IntelliJ IDEA and choose **File → New → Project** (or open the folder that holds the game).
-2. Make sure the Project SDK is set to **Java 25 or newer**.
-3. Add `WhisperingLantern.java` to the `src` folder.
-4. Right-click the file and choose **Run 'WhisperingLantern.main()'**.
-5. Click inside the **Run** console at the bottom, type a number, and press **Enter** to make your choices.
-### Option 2: Run from the terminal
+
 Download the  WhisperingLantern.java File from the releases of this repo and run the following command while being on the same folder as the file in the terminal of your choice 
 ```bash
 java -jar  WhisperingLantern.java
