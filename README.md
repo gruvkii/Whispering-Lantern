@@ -69,7 +69,6 @@ These are secrets Check out the Game to Know !
 
 ### Requirements
 - [JDK 25 or newer](https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html)
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/) (optional, but recommended)
 
 Download the  WhisperingLantern.java File from the releases of this repo and run the following command while being on the same folder as the file in the terminal of your choice 
 ```bash
