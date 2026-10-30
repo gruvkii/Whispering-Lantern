@@ -79,7 +79,7 @@ These are secrets Check out the Game to Know !
 Download the  WhisperingLantern.java File from the releases of this repo and run the following command while being on the same folder as the file in the terminal of your choice 
 
 ```bash
-java -jar  Whispering.Lantern.java
+java -jar  Whispering.Lantern.jar
 ```
 ### Controls
 
