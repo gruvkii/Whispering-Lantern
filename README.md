@@ -1,5 +1,7 @@
 # The Whispering Lantern
 
+### NOTE FOR REVIEWER : SINCE I HAD MY SYSTEM CRASHED AND WINDOWS BECAME UNBOOTABLE, I accessed my code via linux live env  and PUSHED IT VIA WEB UPLOAD SO THE LAST COMMIT OF CODE IS A WEB UPLOAD PLEASE TAKE THAT IN CONSIDERATION AND I AM STILL DOING THIS STUFF VIA WEB FROM THAT COMMIT SINCE THE SUBMITION TIME WAS CLOSE ENOUGH 
+
 A text-based survival story, written in plain Java.
 You're alone in a locked, foggy cemetery at 2:15 AM with a failing lantern and a silver locket that doesn't belong to you and goal is to reach Eleanor's grave before the bell tolls or the lantern dies. 
 There are around 6 different ending according to the decision you take on the story. 
