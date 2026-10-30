@@ -1,7 +1,9 @@
 # The Whispering Lantern
+
 A text-based survival story, written in plain Java.
 You're alone in a locked, foggy cemetery at 2:15 AM with a failing lantern and a silver locket that doesn't belong to you and goal is to reach Eleanor's grave before the bell tolls or the lantern dies. 
 There are around 6 different ending according to the decision you take on the story. 
+
 ---
 ## Screenshots
 <img width="1089" height="318" alt="image" src="https://github.com/user-attachments/assets/63eb4f69-fe8f-47bf-a9a7-a34f0fd0b106" />
@@ -18,6 +20,7 @@ There are around 6 different ending according to the decision you take on the st
 | Libraries | None. Only the standard library (`java.util.Scanner`, `java.util.Random`) |
 
 ### Written the whole program on IF ELSE Condition and While Loops ! 
+
 ---
 
 ## How It Works
@@ -43,6 +46,7 @@ while (oil > 0 && minutesLeft > 0 && distanceToTravel > 0) { ... }
 3. **Talk to Arthur.** A gamble you need to checkout to know what will happen !
 
 ### Story moments
+
 These are secrets Check out the Game to Know ! 
 
 ### Endings
@@ -57,6 +61,7 @@ These are secrets Check out the Game to Know !
 | Trapped at Three | The bell tolls before you arrive |
 
 ### Programming concepts practiced
+
 - **`Scanner`** for reading the player's choices
 - **`while` loop** for the main game loop
 - **`if / else if / else`** for menus, scenes and endings
@@ -68,16 +73,21 @@ These are secrets Check out the Game to Know !
 ## How to Use It
 
 ### Requirements
+
 - [JDK 25 or newer](https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html)
 
 Download the  WhisperingLantern.java File from the releases of this repo and run the following command while being on the same folder as the file in the terminal of your choice 
+
 ```bash
 java -jar  WhisperingLantern.java
 ```
 ### Controls
+
 Type the **number** of the option you want and press **Enter**. If you type something invalid, the game will simply ask again.
+
 ---
 ## Ideas for Next Time
+
 - Add color to the text with ANSI escape codes
 - Add a "play again?" option
 - Add more scenes between the gate and the chapel
