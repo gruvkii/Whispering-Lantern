@@ -33,9 +33,23 @@ public class WhisperingLantern {
         boolean helpedChild = false;
         boolean tookKey = false;
         boolean childSceneDone = false;
+        boolean keySceneDone = false;
+        boolean relit = false;
 
         System.out.println();
-        //Pre Story Printing Needs Here
+        System.out.println("THE WHISPERING LANTERN");
+        System.out.println();
+        System.out.println("Last week you found a tarnished silver locket sewn into the lining");
+        System.out.println("of your late grandmother's coat. Inside, a faded photograph and three");
+        System.out.println("engraved words: \"E. Marlowe. Wait for me.\"");
+        System.out.println();
+        System.out.println("Everyone told you to leave it in a drawer. You couldn't.");
+        System.out.println("So now it's 2:15 AM, the cemetery gates are locked behind you, and");
+        System.out.println("your old lantern is already coughing. Eleanor Marlowe's resting place");
+        System.out.println("is six steps away through the fog. Get her locket home before the bell");
+        System.out.println("tolls 3:00, because whoever is still inside when it rings... stays.");
+        System.out.println();
+        System.out.println("Press Enter to begin...");
         input.nextLine(); // Press Enter to Continue
 
         while (oil > 0 && minutesLeft > 0 && distanceToTravel > 0) {
@@ -180,6 +194,90 @@ public class WhisperingLantern {
                 }
                 System.out.println();
             }
+
+            if (distanceToTravel <= 2 && distanceToTravel > 0 && !keySceneDone && oil > 0 && minutesLeft > 0)
+            {
+                keySceneDone = true;
+                System.out.println("Your light catches a sagging shed. Through the broken window, an iron");
+                System.out.println("key hangs on a hook, tagged MAIN GATE. With it, you could leave this");
+                System.out.println("place no matter what happens ahead.");
+                System.out.println();
+                System.out.println("1. Reach through and take the key");
+                System.out.println("2. Leave it hanging. You didn't come here to leave");
+                int keyChoice = askChoice(input, 1, 2);
+                if (keyChoice == 1) {
+                    tookKey = true;
+                    System.out.println("The key is colder than it has any right to be.");
+                } else {
+                    System.out.println("You step back from the window. The shed seems to breathe out.");
+                }
+                System.out.println();
+            }
+
+            if (oil <= 0 && helpedChild && !relit && distanceToTravel > 0 && minutesLeft > 0)
+            {
+                relit = true;
+                oil = 15;
+                System.out.println("Your flame dies. Total darkness. Then a small gold glow floats toward you.");
+                System.out.println("Wren the Child: I told you I'd come.");
+                System.out.println("She touches your wick with her candle, and the lantern wakes up again. (+15% oil)");
+                System.out.println();
+            }
         }
+
+        System.out.println("===================================");
+        if (distanceToTravel <= 0) {
+            System.out.println("The chapel rises out of the mist, and there, half hidden in moss, a");
+            System.out.println("small stone: ELEANOR MARLOWE. SHE WAITED.");
+            System.out.println("Arthur drifts up beside you, trembling. The locket is warm in your hand.");
+            System.out.println();
+            System.out.println("1. Lay the locket on her grave and say a few words");
+            System.out.println("2. Open the locket and let Arthur say goodbye himself");
+            System.out.println("3. Keep the locket and run for the gate");
+            int finale = askChoice(input, 1, 3);
+
+            if (finale == 2 && ghostTrust >= 2) {
+                System.out.println("You open the locket. The photograph glows, and for one moment Arthur's");
+                System.out.println("hand is solid.");
+                System.out.println("Arthur the Ghost: Hello, my love. Sorry I'm late.");
+                System.out.println("A woman in a pale dress waits at the chapel door, humming badly,");
+                System.out.println("wonderfully out of tune. She takes his hand, and they walk into the light.");
+                if (helpedChild) {
+                    System.out.println("Nearby, Wren runs to her mama, candle blazing, and never looks back.");
+                }
+                System.out.println("The bell tolls three, and it sounds almost like singing.");
+                System.out.println("*** ENDING: THE LANTERN BURNS FOR EVERYONE ***");
+            } else if (finale == 3 && tookKey) {
+                System.out.println("You run. Arthur's cry follows you, thin and broken. The iron key turns,");
+                System.out.println("and you tumble into the road, free. But the locket never warms again,");
+                System.out.println("and some nights you hear someone calling a name through the fog.");
+                System.out.println("*** ENDING: THE ESCAPE THAT FOLLOWED YOU HOME ***");
+            } else if (finale == 3) {
+                System.out.println("You run, but the gate is locked and you have no key. When you turn");
+                System.out.println("around, Arthur is standing very still behind you.");
+                System.out.println("Arthur the Ghost: I was so close to her. And you were going to take her away.");
+                System.out.println("*** ENDING: THE CEMETERY KEEPS WHAT YOU TRIED TO KEEP ***");
+            } else {
+                System.out.println("You lay the locket against the stone and tell her she was waited for,");
+                System.out.println("and that someone remembered. Arthur hovers at the edge of the light.");
+                if (finale == 2) {
+                    System.out.println("Arthur the Ghost: I'm afraid. We never really talked, did we?");
+                }
+                System.out.println("The bell tolls three, and the gate opens, just wide enough for you.");
+                System.out.println("*** ENDING: THE LOCKET RETURNED ***");
+                System.out.println("(Arthur still walks the fog. Maybe next time, stay and listen.)");
+            }
+        } else if (oil <= 0) {
+            System.out.println("The flame gutters, flickers, and goes out.");
+            System.out.println("Whatever is whispering in the fog is much closer now.");
+            System.out.println("*** ENDING: LOST TO THE DARK ***");
+        } else {
+            System.out.println("BONG. BONG. BONG.");
+            System.out.println("The gates dissolve into mist, and the cemetery quietly makes room for one more.");
+            System.out.println("*** ENDING: TRAPPED AT THREE ***");
+        }
+        System.out.println("===================================");
+
+        input.close();
     }
 }
